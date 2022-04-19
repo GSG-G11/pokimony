@@ -1,9 +1,10 @@
+import Cards from './Companents/Cards/Cards';
 
 
 function App() {
   return (
     <div className="App">
-      hello
+      <Cards />
     </div>
   );
 }
