@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import Cards from './Companents/Cards/Cards';
 import { Header } from './Companents'
 
 function App() {
@@ -8,9 +8,9 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+        <Cards />
       </div>
     </Router>
-
   );
 }
 
