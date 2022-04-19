@@ -1,11 +1,16 @@
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Cards from './Companents/Cards/Cards';
-
+import { Header } from './Companents'
 
 function App() {
   return (
-    <div className="App">
-      <Cards />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Cards />
+      </div>
+    </Router>
   );
 }
 
