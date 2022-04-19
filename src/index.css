@@ -1,8 +1,15 @@
-* {
-  padding: 0;
+*{
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 body {
   background-color: #0f0f0f;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+ul {
+  list-style-type: none;
 }
