@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../../images/pokimon.png';
-import bg from '../../images/photo-1613771404721-1f92d799e49f.jpeg';
+import logo from '../../images/pokemon-25th-anniversary-logo-710x398-removebg-preview.png';
+import bg from '../../images/202204_banner_graduation_desktop.jpg';
 import './Header.css';
 
  const Header = () => {
@@ -27,7 +27,11 @@ import './Header.css';
                 </div>
             </header>
             <section className="image-holder">
-            <img src={bg} alt="" className="bg"/>
+                <img src={bg} alt="" className="bg"/>
+                <div class="carousel-inner relative">
+                    <h1>Welcome to Pokimony World, Explore your favorite Pokemons.</h1>
+                    <p>Find your favorite Pokemon and learn more about it, have fun.</p>
+                </div>
             </section>
 
         </>
