@@ -1,14 +1,19 @@
-import React from "react";
+
+import React,{ useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../images/pokemon-25th-anniversary-logo-710x398-removebg-preview.png";
 import bg from "../../images/202204_banner_graduation_desktop.jpg";
+import { Context } from '../../PokimonyContext/Context';
 import "./Header.css";
 
-const Header = () => {
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
+  const Header = () => {
+    const { searchText, setSearchText } = React.useContext(Context);
+    // console.log(searchText);
+
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
   });
 
   return (
@@ -23,6 +28,8 @@ const Header = () => {
             <i className="bx bx-search"></i>
             <input
               class="search-input form-control-search"
+              value={searchText}
+              onChange={(e)=> setSearchText(e.target.value)}
               type="text"
               placeholder="Enter Your favorite pokemon"
             />
@@ -31,7 +38,7 @@ const Header = () => {
       </header>
       <section className="image-holder">
         <img src={bg} alt="" className="bg" />
-
+         
         <div class="carousel-inner relative">
           <h1>Welcome to Pokimony World, Explore your favorite Pokemons.</h1>
           <p>Find your favorite Pokemon and learn more about it, have fun.</p>
