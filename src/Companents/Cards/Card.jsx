@@ -7,11 +7,12 @@ import './Cards.css';
 function Card({
   results,
   image,
-  id
+  id,
+  type,
 }) {
   return (
     <Link to={`/pokemon/${id}`}>
-      <div className="poki-card">
+      <div className={`poki-card ${type}`}>
         <img src={image} alt="pika pika" />
         <h3>{results}</h3>
       </div>

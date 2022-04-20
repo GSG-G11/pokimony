@@ -4,7 +4,6 @@ import Card from './Card';
 import { Context } from '../../PokimonyContext/Context';
 
 function Cards() {
-
   const { searchText, allPokemons, setAllPokemons, loadMore, setLoadMore } = useContext(Context);
 
   const getAllPokemons = async () => {
@@ -51,6 +50,7 @@ function Cards() {
             id={pokemon.id}
             results={pokemon.name}
             image={pokemon.sprites.other.dream_world.front_default}
+            type={pokemon.types[0].type.name}
           />
         ))}
       </div>
