@@ -1,14 +1,11 @@
 import React from 'react';
 import './Cards.css';
 
-const Card = () => {
+const Card = ({ results, image }) => {
   return (
     <div className="poki-card">
-      <img
-        src="https://www.giantbomb.com/a/uploads/scale_small/0/6087/2437349-pikachu.png"
-        alt="pika pika"
-      />
-      <h3>pikachu</h3>
+      <img src={image} alt="pika pika" />
+      <h3>{results}</h3>
     </div>
   );
 };

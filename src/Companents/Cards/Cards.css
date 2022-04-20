@@ -3,6 +3,8 @@
   margin: 0.5rem;
   padding: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+
 }
 .poki-card > img {
   max-width: 100%;
@@ -21,11 +23,46 @@
   text-align: center;
   color: #fff;
   margin-bottom: 10px;
+  transition: all 1s ease-in-out;
+
 }
+.poki-card > h3:hover {
+color: #ff0000;
+}
+
+
 
 .cards-list {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 15px;
+}
+.cards-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0px;
+}
+.btn{
+  margin-top: 2rem ;
+}
+.load-more{
+padding: 10px 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  background-color: #ff0000;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all 1s ease-out;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
+.load-more:hover{
+  box-shadow:  #ff0000 0px 7px 29px 0px;
+  background-color: #fff;
+  color: #ff0000;
+
 }
