@@ -7,7 +7,7 @@ const Context = React.createContext();
 function Pokemoncontext({ children }) {
   const [searchText, setSearchText] = useState('');
   const [allPokemons, setAllPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=2');
+  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
   return (
     <div>
