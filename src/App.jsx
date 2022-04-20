@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Cards from './Companents/Cards/Cards';
-import { Header } from './Companents'
-import {Pokemoncontext} from './PokimonyContext/Context';
-
+import { Header, Cards } from './Companents';
+import { Pokemoncontext } from './PokimonyContext/Context';
 
 function App() {
   return (
@@ -13,7 +11,6 @@ function App() {
           <Header />
           <Cards />
         </Pokemoncontext>
-
       </div>
     </Router>
   );

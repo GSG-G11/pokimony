@@ -1,12 +1,12 @@
+/* eslint-disable no-undef */
+import React, { useState, useEffect, useContext } from 'react';
 import Card from './Card';
-import React , { useState, useEffect, useContext } from 'react';
 import { Context } from '../../PokimonyContext/Context';
 
-const Cards = () => {
+function Cards() {
   const [allPokemons, setAllPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState(
-    'https://pokeapi.co/api/v2/pokemon?limit=2',
-  );
+  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=2');
+
   const { searchText } = useContext(Context);
 
   const getAllPokemons = async () => {
@@ -17,11 +17,9 @@ const Cards = () => {
 
     function createPokemonObject(results) {
       results.forEach(async (pokemon) => {
-        const res = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`,
-        );
-        const data = await res.json();
-        setAllPokemons((currentList) => [...currentList, data]);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`);
+        const dataObj = await response.json();
+        setAllPokemons((currentList) => [...currentList, dataObj]);
         await allPokemons.sort((a, b) => a.id - b.id);
       });
     }
@@ -29,15 +27,17 @@ const Cards = () => {
   };
 
   const filteredPokemons = () => {
-    let filteredPokemons = allPokemons;
-    if (searchText.length !== 0)
-      filteredPokemons = filteredPokemons.filter((product) =>
-        product.name.toLowerCase().includes(searchText.toLowerCase())
-      )
-    return filteredPokemons;
+    let filteredPokemon = allPokemons;
+    if (searchText.length !== 0) {
+      filteredPokemon = filteredPokemon.filter((product) => {
+        const result = product.name
+          .toLowerCase()
+          .includes(searchText.toLowerCase());
+        return result;
+      });
+    }
+    return filteredPokemon;
   };
-
-  console.log(filteredPokemons());
 
   useEffect(() => {
     getAllPokemons();
@@ -46,7 +46,7 @@ const Cards = () => {
   return (
     <div className="cards-holder">
       <div className="cards-list">
-        {filteredPokemons().map((pokemon, i) => (
+        {filteredPokemons().map((pokemon) => (
           <Card
             key={pokemon.id}
             results={pokemon.name}
@@ -55,12 +55,16 @@ const Cards = () => {
         ))}
       </div>
       <div className="btn">
-        <button onClick={() => getAllPokemons()} className="load-more">
+        <button
+          type="button"
+          onClick={() => getAllPokemons()}
+          className="load-more"
+        >
           load more
         </button>
       </div>
     </div>
   );
-};
+}
 
 export default Cards;
