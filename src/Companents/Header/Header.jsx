@@ -1,19 +1,18 @@
+/* eslint-disable no-undef */
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import React,{ useState } from "react";
-import { Link } from "react-router-dom";
-
-import logo from "../../images/pokemon-25th-anniversary-logo-710x398-removebg-preview.png";
-import bg from "../../images/202204_banner_graduation_desktop.jpg";
+import logo from '../../images/pokemon-25th-anniversary-logo-710x398-removebg-preview.png';
+import bg from '../../images/202204_banner_graduation_desktop-copy.jpg';
 import { Context } from '../../PokimonyContext/Context';
-import "./Header.css";
+import './Header.css';
 
-  const Header = () => {
-    const { searchText, setSearchText } = React.useContext(Context);
-    // console.log(searchText);
+function Header() {
+  const { searchText, setSearchText } = React.useContext(Context);
 
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector("header");
-      header.classList.toggle("sticky", window.scrollY > 0);
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 0);
   });
 
   return (
@@ -24,12 +23,12 @@ import "./Header.css";
             <img src={logo} alt="" />
             <Link to="/"> Pokimony </Link>
           </div>
-          <div class="parant-search-div header__nav">
-            <i className="bx bx-search"></i>
+          <div className="parant-search-div header__nav">
+            <i className="bx bx-search" />
             <input
-              class="search-input form-control-search"
+              className="search-input form-control-search"
               value={searchText}
-              onChange={(e)=> setSearchText(e.target.value)}
+              onChange={(e) => setSearchText(e.target.value)}
               type="text"
               placeholder="Enter Your favorite pokemon"
             />
@@ -38,13 +37,13 @@ import "./Header.css";
       </header>
       <section className="image-holder">
         <img src={bg} alt="" className="bg" />
-         
-        <div class="carousel-inner relative">
+
+        <div className="carousel-inner relative">
           <h1>Welcome to Pokimony World, Explore your favorite Pokemons.</h1>
           <p>Find your favorite Pokemon and learn more about it, have fun.</p>
         </div>
       </section>
     </>
   );
-};
+}
 export default Header;
