@@ -1,10 +1,13 @@
 import Card from './Card';
-import { useState, useEffect } from 'react';
+import React , { useState, useEffect, useContext } from 'react';
+import { Context } from '../../PokimonyContext/Context';
+
 const Cards = () => {
   const [allPokemons, setAllPokemons] = useState([]);
   const [loadMore, setLoadMore] = useState(
     'https://pokeapi.co/api/v2/pokemon?limit=2',
   );
+  const { searchText } = useContext(Context);
 
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
@@ -25,6 +28,17 @@ const Cards = () => {
     createPokemonObject(data.results);
   };
 
+  const filteredPokemons = () => {
+    let filteredPokemons = allPokemons;
+    if (searchText.length !== 0)
+      filteredPokemons = filteredPokemons.filter((product) =>
+        product.name.toLowerCase().includes(searchText.toLowerCase())
+      )
+    return filteredPokemons;
+  };
+
+  console.log(filteredPokemons());
+
   useEffect(() => {
     getAllPokemons();
   }, []);
@@ -32,7 +46,7 @@ const Cards = () => {
   return (
     <div className="cards-holder">
       <div className="cards-list">
-        {allPokemons.map((pokemon, i) => (
+        {filteredPokemons().map((pokemon, i) => (
           <Card
             key={pokemon.id}
             results={pokemon.name}
