@@ -5,7 +5,7 @@ import { Context } from '../../PokimonyContext/Context';
 
 function Cards() {
   const [allPokemons, setAllPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=2');
+  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
 
   const { searchText } = useContext(Context);
 
@@ -51,6 +51,7 @@ function Cards() {
             key={pokemon.id}
             results={pokemon.name}
             image={pokemon.sprites.other.dream_world.front_default}
+            type={pokemon.types[0].type.name}
           />
         ))}
       </div>

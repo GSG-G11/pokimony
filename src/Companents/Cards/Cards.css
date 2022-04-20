@@ -4,7 +4,6 @@
   padding: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
-
 }
 .poki-card > img {
   max-width: 100%;
@@ -24,13 +23,10 @@
   color: #fff;
   margin-bottom: 10px;
   transition: all 1s ease-in-out;
-
 }
 .poki-card > h3:hover {
-color: #ff0000;
+  color: #ff0000;
 }
-
-
 
 .cards-list {
   display: flex;
@@ -38,17 +34,17 @@ color: #ff0000;
   flex-wrap: wrap;
   margin: 15px;
 }
-.cards-holder{
+.cards-holder {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem 0px;
 }
-.btn{
-  margin-top: 2rem ;
+.btn {
+  margin-top: 2rem;
 }
-.load-more{
-padding: 10px 15px;
+.load-more {
+  padding: 10px 15px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border: none;
   background-color: #ff0000;
@@ -60,9 +56,38 @@ padding: 10px 15px;
   cursor: pointer;
   letter-spacing: 1.5px;
 }
-.load-more:hover{
-  box-shadow:  #ff0000 0px 7px 29px 0px;
+.load-more:hover {
+  box-shadow: #ff0000 0px 7px 29px 0px;
   background-color: #fff;
   color: #ff0000;
-
+}
+.rock {
+  box-shadow: rgb(132, 58, 58) 0px 1px 20px -10px;
+}
+.ghost {
+  box-shadow: rgb(111, 65, 65) 0px 1px 20px -10px;
+}
+.electric {
+  box-shadow: rgb(253, 253, 108) 0px 1px 20px -10px;
+}
+.bug {
+  box-shadow: #fac67c 0px 1px 20px -10px;
+}
+.poison {
+  box-shadow: #d677fb 0px 1px 20px -10px;
+}
+.normal {
+  box-shadow: #ffbaba 0px 1px 20px -10px;
+}
+.fairy {
+  box-shadow: rgba(244, 148, 164, 0.863) 0px 1px 20px -10px;
+}
+.fire {
+  box-shadow: #fc826c 0px 1px 20px -10px;
+}
+.grass {
+  box-shadow: #82f782 0px 1px 20px -10px;
+}
+.water {
+  box-shadow: #7ec4f6 0px 1px 20px -10px;
 }
