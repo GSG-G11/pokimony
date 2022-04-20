@@ -1,13 +1,11 @@
 /* eslint-disable no-undef */
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Card from './Card';
 import { Context } from '../../PokimonyContext/Context';
 
 function Cards() {
-  const [allPokemons, setAllPokemons] = useState([]);
-  const [loadMore, setLoadMore] = useState('https://pokeapi.co/api/v2/pokemon?limit=2');
 
-  const { searchText } = useContext(Context);
+  const { searchText, allPokemons, setAllPokemons, loadMore, setLoadMore } = useContext(Context);
 
   const getAllPokemons = async () => {
     const res = await fetch(loadMore);
@@ -26,11 +24,12 @@ function Cards() {
     createPokemonObject(data.results);
   };
 
+
   const filteredPokemons = () => {
     let filteredPokemon = allPokemons;
     if (searchText.length !== 0) {
-      filteredPokemon = filteredPokemon.filter((product) => {
-        const result = product.name
+      filteredPokemon = filteredPokemon.filter((pokemon) => {
+        const result = pokemon.name
           .toLowerCase()
           .includes(searchText.toLowerCase());
         return result;
@@ -49,6 +48,7 @@ function Cards() {
         {filteredPokemons().map((pokemon) => (
           <Card
             key={pokemon.id}
+            id={pokemon.id}
             results={pokemon.name}
             image={pokemon.sprites.other.dream_world.front_default}
           />
@@ -67,4 +67,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Cards

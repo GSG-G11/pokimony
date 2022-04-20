@@ -1,4 +1,5 @@
 import Header from './Header/Header';
-import Cards from './Cards/Cards';
+import Cards  from './Cards/Cards';
+import Details from './DetailsPokemon/Details';
 
-export { Header, Cards };
+export { Header, Cards, Details };
