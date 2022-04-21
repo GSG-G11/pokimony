@@ -10,9 +10,9 @@
   <p align="center">
     Simple App to Search About pokimon characters using React Hooks 
   </p>
-    <a href=""> Demo</a>
+    <a href="https://imaginative-crisp-6a6d5b.netlify.app/"> Demo</a>
     ·
-    <a href="">API</a>
+    <a href="https://pokeapi.co/">API</a>
 </div>
 
 ## Description
